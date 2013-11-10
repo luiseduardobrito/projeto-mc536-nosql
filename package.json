@@ -9,7 +9,9 @@
     "sails-disk": "~0.9.0",
     "ejs": "0.8.4",
     "optimist": "0.3.4",
-    "request": "~2.27.0"
+    "request": "~2.27.0",
+    "redis": "~0.9.0",
+    "hiredis": "~0.1.15"
   },
   "scripts": {
     "start": "node app.js",
