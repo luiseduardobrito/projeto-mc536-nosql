@@ -51,25 +51,3 @@ jQuery(document).ready(function ($) {
   $('.fitvids').fitVids();
   
 }); /* end of as page load scripts */
-
-  
-/***************************************************
-      Autocomplete Search
-***************************************************/
-
-// Load countries then initialize plugin:
-jQuery.ajax({
-    url: 'content/countries.txt',
-    dataType: 'json'
-}).done(function (source) {
-
-    var countriesArray = jQuery.map(source, function (value, key) { return { value: value, data: key }; }),
-        countries = jQuery.map(source, function (value) { return value; });
-
-    // Initialize autocomplete with custom appendTo:
-    jQuery('#autocomplete-dynamic').autocomplete({
-        lookup: countriesArray
-    });
-    
-});
-

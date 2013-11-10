@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <title>MC536 - IC.fm</title>
@@ -25,6 +25,11 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-route.min.js"></script>
+
+    <link href="jquery-ui/css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
   </head>
 
   <body>
@@ -37,23 +42,15 @@
       <div class="navbar-inner">
         <div class="container">
 
-          <a class="brand" href="index.html"><img src="assets/img/logo.png"></a>
+          <a class="brand" href="index.html"><h2 style="color: #FFF">ic.fm</h2></a>
 
           <!-- Responsive Navbar -->
           <div id="nav-main">
             <ul id="menu" class="nav">
-              <li class="active"><a href="/">Home</a></li>
-              <li><a href="/login">Login</a></li>
-              <li><a href="/signup">Cadastro</a></li>
-              <li><a href="/stats">Estatísticas</a></li>
-              <li class="dropdown">
-                <a href="/me" class="dropdown-toggle" data-toggle="dropdown">Minha conta</a>
-                <ul class="dropdown-menu">
-                  <li><a href="/me">Perfil</a></li>
-                  <li><a href="/recommendations">Recomendações</a></li>
-                  <li><a href="/logout">Logout</a></li>
-                </ul>
-              </li>
+              <li class="active"><a href="#!/">Home</a></li>
+              <li><a href="#!/login">Login</a></li>
+              <li><a href="#!/login">Cadastro</a></li>
+              <li><a href="#!/stats">Estatísticas</a></li>
               <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
             </ul>
           </div><!--/.nav-collapse -->
@@ -65,66 +62,7 @@
 
     <!-- HERO -->
     <div id="hero">
-      <div class="container">
-
-        <!-- Hero title -->
-        <div class="hero-title">
-          <h1>Conheça novos artistas</h1>
-        </div>
-
-        <!-- Hero search -->
-        <div class="hero-search">
-          <form role="search" method="get" id="searchform" class="form-search" action="#">
-            <label class="hide" for="s">Quero ouvir:</label>
-            <input type="text" id="autocomplete-dynamic" name="s" class="searchajax search-query" autocomplete="off" placeholder="Find help! Enter search term here.">
-            <input type="submit" id="searchsubmit" value="Search" class="btn-black">
-          </form>
-        </div>
-
-        <!-- Hero boxes -->
-        <div class="row boxes">
-          <div class="span4">
-            <div class="box">
-              <div class="box-icon">
-                <i class="icon-music"></i>
-              </div>
-              <div class="box-title">
-                <h2><a href="#">Descubra</a></h2>
-              </div>
-              <div class="box-text">
-                <p>Artistas novos, baseado nos que você já escuta</p>
-              </div>
-            </div>
-          </div>
-          <div class="span4">
-            <div class="box">
-              <div class="box-icon">
-                <i class="icon-group"></i>
-              </div>
-              <div class="box-title">
-                <h2><a href="#">Compartilhe</a></h2>
-              </div>
-              <div class="box-text">
-                <p>Troque experiências e recomendações com seus amigos</p>
-              </div>
-            </div>
-          </div>
-          <div class="span4">
-            <div class="box">
-              <div class="box-icon">
-                <i class="icon-sitemap"></i>
-              </div>
-              <div class="box-title">
-                <h2><a href="#">Recomendação</a></h2>
-              </div>
-              <div class="box-text">
-                <p>Baseada em Echonest, Lastfm e Wikipedia, conheça um sistema de recomendação completo!</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+      <div class="container" ng-view></div>
     </div>
 
     <!-- FOOTER -->
@@ -191,6 +129,8 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
+    <script src="jquery-ui/js/jquery-ui-1.10.3.custom.js"></script>
+
     <script src="assets/js/bootstrap-transition.js"></script>
     <script src="assets/js/bootstrap-alert.js"></script>
     <script src="assets/js/bootstrap-modal.js"></script>
@@ -202,11 +142,14 @@
     <script src="assets/js/bootstrap-collapse.js"></script>
     <script src="assets/js/bootstrap-carousel.js"></script>
 
-    
-    <script type="text/javascript" src="assets/js/jquery.autocomplete.js"></script>
     <script type="text/javascript" src="assets/js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="assets/js/application.js"></script>
     <script src="assets/js/holder/holder.js"></script>
+
+    <script src="js/framework.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/directives.js"></script>
 
   </body>
 </html>
