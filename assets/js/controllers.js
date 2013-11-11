@@ -21,7 +21,8 @@ angular.module('myApp.controllers', [])
 
 		$scope.artist = {
 			name: null,
-			bio: null
+			bio: null,
+			img: null
 		}
 
 		$http({method: 'GET', url: '/artist?name=' + $routeParams.name}).
@@ -30,7 +31,8 @@ angular.module('myApp.controllers', [])
 
 				$scope.artist = {
 					name: data.name,
-					bio: data.bio
+					bio: data.bio,
+					img: data.img
 				};
 			}).
 

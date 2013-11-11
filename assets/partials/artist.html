@@ -1,5 +1,11 @@
  <div id="content" class="row">
-	<div id="main" class="span12" role="main">
+	<aside id="sidebar" class="span2" role="complementary">
+		<section class="widget">
+			<h3>&nbsp;</h3>
+			<img style="max-width: 150px" ng-src="{{artist.img}}">
+		</section>
+	</aside>
+	<div id="main" class="span9" role="main">
 		<div class="page-title">
 			<h1>{{artist.name}}</h1>
 		</div>
@@ -7,4 +13,4 @@
 			<p ng-bind-html="artist.bio"></p>
 		</div> 
 	</div>
-</div><!-- /#content -->
+</div>
