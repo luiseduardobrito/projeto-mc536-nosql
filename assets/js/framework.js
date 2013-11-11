@@ -4,6 +4,7 @@
 // Declare app level module which depends on filters, and services
 angular.module('myApp', [
 	'ngRoute',
+	'ngSanitize',
 	'myApp.controllers',
 	'myApp.services',
 	'myApp.directives',
@@ -21,6 +22,12 @@ angular.module('myApp', [
 		.when('/login', {
 			templateUrl: '../partials/login.html', 
 			controller: 'LoginCtrl'
+		});
+
+	$routeProvider
+		.when('/artist/:name', {
+			templateUrl: '../partials/artist.html', 
+			controller: 'ArtistCtrl'
 		});
 
 	$routeProvider

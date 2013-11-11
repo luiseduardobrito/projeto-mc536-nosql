@@ -1,15 +1,15 @@
 angular.module('myApp.directives', []).directive('autoComplete', function($timeout) {
-    return function(scope, iElement, iAttrs) {
+	return function(scope, iElement, iAttrs) {
 
-           jQuery(iElement).autocomplete({
+			jQuery(iElement).autocomplete({
 
-                source: "/api/artist/autocomplete",
+				source: "/api/artist/autocomplete",
 
-                select: function() {
-                    $timeout(function() {
-                      iElement.trigger('input');
-                    }, 0);
-                }
-            });
-    };
+				select: function(event, ui) {
+					scope.$apply(function(){
+						scope.submitArtistSearch(ui.item.value)
+					})
+				}
+			});
+	};
 });

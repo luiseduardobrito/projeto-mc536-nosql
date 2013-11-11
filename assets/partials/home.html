@@ -5,9 +5,9 @@
 
 <!-- Hero search -->
 <div class="hero-search">
-  <form id="searchform" class="form-search" novalidate method="get" action="/api/artists/auto">
+  <form id="searchform" ng-submit="submitArtistSearch()">
     <label class="hide" for="s">Quero ouvir:</label>
-    <input class="search-query" auto-complete ui-items="names" ng-model="selected" placeholder="Ex: Pink Floyd...">
+    <input class="search-query" auto-complete ui-items="names" ng-model="artist" placeholder="Ex: Pink Floyd...">
     <input type="submit" id="searchsubmit" value="Search" class="btn-black">
   </form>
 </div>

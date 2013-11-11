@@ -9,6 +9,36 @@ redisClient.on("error", function (err) {
 
 module.exports = {
 
+	index: function(req, res) {
+
+		Artist
+			.findByName(req.param("name"))
+			.done(function(err, docs) {
+
+				if(err) {
+
+					res.json({
+						result: "error",
+						msg: "no artist found"
+					}, 404)
+				}
+
+				else if(!docs.length) {
+
+					Artist
+						.create({
+							name: req.param("name")
+						})
+						.done(function(err, doc) {
+							res.json(doc)
+						})
+				}
+
+				else
+					res.json(docs[0])
+			})
+	},
+
 	autocomplete: function(req, res) {
 
 		var query = req.param("term");

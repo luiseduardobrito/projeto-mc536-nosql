@@ -2,10 +2,42 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
+angular.module('myApp.controllers', [])
 
-	controller('HomeCtrl', ['$scope', '$http', function($scope, $http) {
-		$scope.names = ["john", "bill", "charlie", "robert", "alban", "oscar", "marie", "celine", "brad", "drew", "rebecca", "michel", "francis", "jean", "paul", "pierre", "nicolas", "alfred", "gerard", "louis", "albert", "edouard", "benoit", "guillaume", "nicolas", "joseph"];
+	.controller('HomeCtrl', [
+
+		'$scope', '$http', '$location', 
+		function($scope, $http, $location) {
+
+			$scope.submitArtistSearch = function(val){
+
+				if(val) $scope.artist = val;
+				$location.path("artist/" + encodeURI($scope.artist));
+			};
+		}
+	])
+
+	.controller('ArtistCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+
+		$scope.artist = {
+			name: null,
+			bio: null
+		}
+
+		$http({method: 'GET', url: '/artist?name=' + $routeParams.name}).
+
+			success(function(data, status, headers, config) {
+
+				$scope.artist = {
+					name: data.name,
+					bio: data.bio
+				};
+			}).
+
+			error(function(data, status, headers, config) {
+				alert("Artist não encontrado!");
+				$location.hash("#!/");
+			})
 	}])
 
 	.controller('LoginCtrl', ['$scope', function($scope) {

@@ -8,8 +8,20 @@ module.exports = {
 
 	attributes: {
 
-		name: "string",
-		wiki: "url",
+		name: {
+
+			type: "string",
+			index: true,
+			unique: true
+		},
+
+		url: {
+
+			type: "url",
+			index: true,
+			unique: true
+		},
+
 		bio: "string",
 		img: "url",
 		
@@ -34,6 +46,7 @@ module.exports = {
 
 			// data mining
 			values.name = artist.name;
+			values.url = artist.url;
 			values.tags = artist.tags && artist.tags.tag ? artist.tags.tag : [];
 			values.bio = artist.bio && artist.bio.content ? artist.bio.content : null;
 
