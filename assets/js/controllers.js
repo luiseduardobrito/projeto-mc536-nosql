@@ -42,7 +42,16 @@ angular.module('myApp.controllers', [])
 			})
 	}])
 
-	.controller('LoginCtrl', ['$scope', function($scope) {
+	.controller('LoginCtrl', ['$scope', '$location', 'userService', function($scope, $location, $userService) {
+
+		$scope.userService = $userService;
+
+		$scope.$watch('userService.get()', function(me)  {
+
+			if(me)
+				$location.path("me");
+
+		}, true);
 
 		$scope.master = {};
 

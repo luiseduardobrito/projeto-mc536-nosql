@@ -14,11 +14,11 @@ angular.module('myApp.directives', [])
 	};
 })
 
-.directive('google', function ($http) {
+.directive('google', function ($http, userService) {
 	return {
 		restrict: 'A',
 		scope: true,
-		controller: function ($scope, $attrs) {
+		controller: ['$scope', '$attrs', 'userService', function ($scope, $attrs) {
 			// Load the SDK Asynchronously
 			(function () {
 				var po = document.createElement('script');
@@ -65,17 +65,21 @@ angular.module('myApp.directives', [])
 										url: "/user/create",
 										method: "GET",
 										params: {
-
 											name: resp.displayName,
 											login: resp.displayName.toLowerCase().split(' ').join(''),
 											image: resp.image.url
 										}
-									}).success(function(data, status, headers, config) {
-    									$scope.user = data;
-    									alert("Bem vindo, " + $scope.user.name + "!");
-    								}).error(function(data, status, headers, config) {
-    									console.log("erro ao criar usuario");
-    								});
+
+									}).success(function (data, status, headers, config) {
+										
+										$scope.user = data;
+										$scope.user.logged_in = true;
+
+										userService.set($scope.user);
+
+									}).error(function (data, status, headers, config) {
+										alert("Erro ao criar usuario");
+									});
 								});
 							});
 
@@ -136,7 +140,7 @@ angular.module('myApp.directives', [])
 					}
 				});
 			}
-		},
+		}],
 		link: function (scope, element, attrs, controller) {}
 	}
 });

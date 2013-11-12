@@ -17,6 +17,15 @@
             </form>
         </div><!-- END CONTACT --> 
 
+        <p>Entre com sua conta Google!</p>
+        <div data-google='386386305964'>
+          <a href='#' class='btn btn-danger pull-right' ng-click='revoke()' ng-show='login_status == "connected"'>revoke</a>
+          <span id="signinButton" ng-hide='login_status == "connected"'>
+            <button class='btn btn-primary'>Google+</button>
+          </span>
+          <button class='btn btn-primary' ng-click='fetch()' ng-show='login_status == "connected"'>fetch</button>
+        </div>
+
         <p>Ainda não possui conta? Cria a sua agora mesmo!</p>
 
         <!--BEGIN CONTACT -->
