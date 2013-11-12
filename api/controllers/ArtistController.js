@@ -69,7 +69,7 @@ module.exports = {
 						arr.push(artists[i].name);
 
 					// save in cache
-					redisClient.hset(query, "expires", Date.now() + 15*6000); // expires in 15 minutes
+					redisClient.hset(query, "expires", Date.now() + 15 * 6000); // expires in 15 minutes
 					redisClient.hset(query, "values", JSON.stringify(arr)); // expires in 15 minutes
 
 					// serve response

@@ -6,8 +6,8 @@ angular.module('myApp.controllers', [])
 
 	.controller('HomeCtrl', [
 
-		'$scope', '$http', '$location', 
-		function($scope, $http, $location) {
+		'$scope', '$http', '$location',
+		function($scope, $http, $location, $FB) {
 
 			$scope.submitArtistSearch = function(val){
 

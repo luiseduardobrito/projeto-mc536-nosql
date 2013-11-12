@@ -14,7 +14,7 @@
     "hiredis": "~0.1.15"
   },
   "scripts": {
-    "start": "node app.js",
+    "start": "rm -r .tmp ; node app.js",
     "debug": "node debug app.js"
   },
   "main": "app.js",
