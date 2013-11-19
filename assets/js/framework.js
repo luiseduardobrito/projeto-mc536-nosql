@@ -24,6 +24,12 @@ angular.module('myApp', [
 		});
 
 	$routeProvider
+		.when('/me', {
+			templateUrl: '../partials/user.html', 
+			controller: 'UserCtrl'
+		});
+
+	$routeProvider
 		.when('/artist/:name', {
 			templateUrl: '../partials/artist.html', 
 			controller: 'ArtistCtrl'

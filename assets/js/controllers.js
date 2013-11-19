@@ -17,6 +17,18 @@ angular.module('myApp.controllers', [])
 		}
 	])
 
+	.controller('UserCtrl', [
+
+		'$scope', '$http', '$location', 'userService',
+		function($scope, $http, $location, userService) {
+
+			$scope.user = userService.get();
+
+			if(!$scope.user)
+				$location.path("")
+		}
+	])
+
 	.controller('ArtistCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
 
 		$scope.artist = {

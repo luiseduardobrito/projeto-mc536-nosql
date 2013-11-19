@@ -19,8 +19,13 @@ module.exports = {
     
 	index: function(req, res) {
 
+		var params = {}
+
+		if(req.param("name"))
+			params.name = req.param("name")
+
 		User
-			.findByName(req.param("name"))
+			.find(params)
 			.done(function(err, docs) {
 
 				if(err) {
@@ -48,5 +53,9 @@ module.exports = {
 					res.json(docs[0])
 			})
 	},
+
+	addFriend: function(req, res) {
+
+	}
   
 };

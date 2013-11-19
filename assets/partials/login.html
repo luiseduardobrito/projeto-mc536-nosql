@@ -1,66 +1,70 @@
-<div id="content" class="row">
-    <div id="main" class="span9" role="main">
-      <div class="page-title">
-        <h1>Login</h1>
-      </div>
-      <div class="page-main">
-        <p>Acesse o sistema com suas informações de login</p>
-        <!--BEGIN CONTACT -->
-        <div class="contact-form">
-            <div id="messageDiv"></div>
-            <form action="contact.php" id="contactForm" method="post">
-                <div class="element">
-                    <label for="userlogin" class="dis_lbl">Login</label>
-                    <input type="text" id="userlogin" ng-model="user.login"/>
-                    <input type="button" value="Logar" ng-click="performLogin()"/>
-                </div>
-            </form>
-        </div><!-- END CONTACT --> 
+<div id="hero">
+  <div id="wrap" class="container" role="document">
+    <div id="content" class="row">
+        <div id="main" class="span9" role="main">
+          <div class="page-title">
+            <h1>Login</h1>
+          </div>
+          <div class="page-main">
+            <p>Acesse o sistema com suas informações de login</p>
+            <!--BEGIN CONTACT -->
+            <div class="contact-form">
+                <div id="messageDiv"></div>
+                <form action="contact.php" id="contactForm" method="post">
+                    <div class="element">
+                        <label for="userlogin" class="dis_lbl">Login</label>
+                        <input type="text" id="userlogin" ng-model="user.login"/>
+                        <input type="button" value="Logar" ng-click="performLogin()"/>
+                    </div>
+                </form>
+            </div><!-- END CONTACT --> 
 
-        <p>Entre com sua conta Google!</p>
-        <div data-google='386386305964'>
-          <a href='#' class='btn btn-danger pull-right' ng-click='revoke()' ng-show='login_status == "connected"'>revoke</a>
-          <span id="signinButton" ng-hide='login_status == "connected"'>
-            <button class='btn btn-primary'>Google+</button>
-          </span>
-          <button class='btn btn-primary' ng-click='fetch()' ng-show='login_status == "connected"'>fetch</button>
+            <p>Entre com sua conta Google!</p>
+            <div data-google='386386305964'>
+              <a href='#' class='btn btn-danger pull-right' ng-click='revoke()' ng-show='login_status == "connected"'>revoke</a>
+              <span id="signinButton" ng-hide='login_status == "connected"'>
+                <button class='btn btn-primary'>Google+</button>
+              </span>
+              <button class='btn btn-primary' ng-click='fetch()' ng-show='login_status == "connected"'>fetch</button>
+            </div>
+
+            <p>Ainda não possui conta? Cria a sua agora mesmo!</p>
+
+            <!--BEGIN CONTACT -->
+            <div class="contact-form">
+                <div id="messageDiv"></div>
+                <form action="contact.php" id="contactForm" method="post">
+                    <div class="element" id="signnupLoginCt">
+                        <label for="userlogin" class="dis_lbl">Login</label>
+                        <input type="text" id="userlogin" ng-model="signup.login" placeholder="Digite um login unico"/>
+                    </div>
+                    <div class="element" id="signupNameCt">
+                        <label for="userlogin" class="dis_lbl">Nome</label>
+                        <input type="text" id="userlogin" ng-model="signup.name" placeholder="Digite seu nome"/>
+                    </div>
+                    <div class="element">
+                        <input type="button" value="Criar conta" ng-click="performSignup()"/>
+                    </div>
+                </form>
+            </div><!-- END CONTACT -->            
+          </div>        
         </div>
 
-        <p>Ainda não possui conta? Cria a sua agora mesmo!</p>
-
-        <!--BEGIN CONTACT -->
-        <div class="contact-form">
-            <div id="messageDiv"></div>
-            <form action="contact.php" id="contactForm" method="post">
-                <div class="element" id="signnupLoginCt">
-                    <label for="userlogin" class="dis_lbl">Login</label>
-                    <input type="text" id="userlogin" ng-model="signup.login" placeholder="Digite um login unico"/>
-                </div>
-                <div class="element" id="signupNameCt">
-                    <label for="userlogin" class="dis_lbl">Nome</label>
-                    <input type="text" id="userlogin" ng-model="signup.name" placeholder="Digite seu nome"/>
-                </div>
-                <div class="element">
-                    <input type="button" value="Criar conta" ng-click="performSignup()"/>
-                </div>
-            </form>
-        </div><!-- END CONTACT -->            
-      </div>        
-    </div>
-
-    <aside id="sidebar" class="span3" role="complementary">
-      <section class="widget">
-        <h3>Ajuda</h3>
-        <ul class="menu">
-          <li><a href="#">Getting Started</a></li>
-          <li><a href="#">Administration</a></li>
-          <li><a href="#">Admin Panel</a></li>
-          <li><a href="#">Extensions</a></li>
-          <li><a href="#">Shipping Methods</a></li>
-          <li><a href="#">Tips and Tricks</a></li>
-          <li><a href="#">Troubleshooting</a></li>
-          <li><a href="#">Video Tutorials</a></li>
-        </ul>
-      </section>
-    </aside>
-</div><!-- /#content -->
+        <aside id="sidebar" class="span3" role="complementary">
+          <section class="widget">
+            <h3>Ajuda</h3>
+            <ul class="menu">
+              <li><a href="#">Getting Started</a></li>
+              <li><a href="#">Administration</a></li>
+              <li><a href="#">Admin Panel</a></li>
+              <li><a href="#">Extensions</a></li>
+              <li><a href="#">Shipping Methods</a></li>
+              <li><a href="#">Tips and Tricks</a></li>
+              <li><a href="#">Troubleshooting</a></li>
+              <li><a href="#">Video Tutorials</a></li>
+            </ul>
+          </section>
+        </aside>
+    </div><!-- /#content -->
+  </div>
+</div>

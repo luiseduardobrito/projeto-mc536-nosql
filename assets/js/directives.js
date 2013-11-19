@@ -14,7 +14,7 @@ angular.module('myApp.directives', [])
 	};
 })
 
-.directive('google', function ($http, userService) {
+.directive('google', function ($http, userService, $location) {
 	return {
 		restrict: 'A',
 		scope: true,
@@ -76,6 +76,7 @@ angular.module('myApp.directives', [])
 										$scope.user.logged_in = true;
 
 										userService.set($scope.user);
+										$location.path("me");
 
 									}).error(function (data, status, headers, config) {
 										alert("Erro ao criar usuario");
@@ -146,5 +147,6 @@ angular.module('myApp.directives', [])
 });
 
 function google_plus_sign_in_render() {
-	angular.element(jQuery('#signinButton')).scope().render();
+	if(jQuery('#signinButton').length)
+		angular.element(jQuery('#signinButton')).scope().render();
 }

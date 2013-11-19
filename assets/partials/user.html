@@ -1,0 +1,55 @@
+<!-- PAGE HEADER -->
+<div id="page-header-container">
+	<div class="container">
+		<div class="page-header row">
+			<div class="span1">
+				<img style="max-height: 75px;margin: 15px;border-radius: 5px;" ng-src="{{user.image}}">
+			</div>
+			<div class="span8">
+				<h1>{{user.name}}</h1>
+				<p class="tagline">{{user.login}}</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- PAGE CONTENT -->
+<div id="wrap" class="container" role="document">
+	<div id="content" class="row">
+		<div id="main" class="span9" role="main">
+			<div class="page-title">
+				<h1>Minhas informações</h1>
+			</div>
+
+			<article class="hentry">
+				<header>
+					<h2><i class="icon-file"></i> <a href="article.html">Informações pessoais</a></h2>
+					<div class="loop-like">
+						<span class="label label-likes"><i class="icon-comment"></i> 6</span>
+					</div>    
+				</header>
+				<div class="entry-content">
+					<br />Nome: <input type="text" ng-model="user.name">
+					<br />Login: <input type="text" ng-model="user.login">
+					<br />Imagem: <input type="text" ng-model="user.image">
+				</div>
+				<footer class="post-meta">
+					 <time class="updated" datetime="2013-01-12T20:29:42+00:00" pubdate>Last Updated: 109 days ago </time>
+				 </footer>
+			</article> 
+		</div>
+
+		<aside id="sidebar" class="span3" role="complementary">
+			<section class="widget">
+				<h3>Recomendações</h3>
+				<ul class="menu">
+					<li><a href="#">Artic Monkeys</a></li>
+					<li><a href="#">Arcade Fire</a></li>
+					<li><a href="#">Pink Floyd</a></li>
+					<li><a href="#">The Beatles</a></li>
+					<li><a href="#">Led Zeppelin</a></li>
+				</ul>
+			</section>
+		</aside>
+	</div>
+</div>
