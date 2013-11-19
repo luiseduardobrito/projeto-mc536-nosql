@@ -11,7 +11,8 @@
     "optimist": "0.3.4",
     "request": "~2.27.0",
     "redis": "~0.9.0",
-    "hiredis": "~0.1.15"
+    "hiredis": "~0.1.15",
+    "sails-mongo": "~0.9.5"
   },
   "scripts": {
     "start": "rm -r .tmp ; node app.js",

@@ -55,7 +55,9 @@ module.exports = {
 	},
 
 	addFriend: function(req, res) {
-
+		
+		User
+			.findOne()
 	}
   
 };

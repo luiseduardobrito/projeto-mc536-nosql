@@ -37,6 +37,44 @@
 					 <time class="updated" datetime="2013-01-12T20:29:42+00:00" pubdate>Last Updated: 109 days ago </time>
 				 </footer>
 			</article> 
+
+			<article class="hentry">
+				<header>
+					<h2><i class="icon-file"></i> <a href="article.html">Artistas Curtidos</a></h2>
+					<div class="loop-like">
+						<span class="label label-likes"><i class="icon-comment"></i> 6</span>
+					</div>    
+				</header>
+				<div class="entry-content">
+					<br />Curtir: <input type="text" ng-model="newArtist"> &nbsp; <button ng-click="addArtist()">OK</button>
+					<br /><br />
+					<ul ng-repeat="artist in artists">
+						<li>{{artist}}</li>
+					</ul>
+				</div>
+				<footer class="post-meta">
+					 <time class="updated" datetime="2013-01-12T20:29:42+00:00" pubdate>Last Updated: 109 days ago </time>
+				 </footer>
+			</article>
+
+			<article class="hentry">
+				<header>
+					<h2><i class="icon-file"></i> <a href="article.html">Meus amigos</a></h2>
+					<div class="loop-like">
+						<span class="label label-likes"><i class="icon-comment"></i> 6</span>
+					</div>    
+				</header>
+				<div class="entry-content">
+					<br />Adicionar: <input type="text" ng-model="newFriend"> &nbsp; <button ng-click="addFriend()">OK</button>
+					<br /><br />
+					<ul ng-repeat="friend in friends">
+						<li>{{friend}}</li>
+					</ul>
+				</div>
+				<footer class="post-meta">
+					 <time class="updated" datetime="2013-01-12T20:29:42+00:00" pubdate>Last Updated: 109 days ago </time>
+				 </footer>
+			</article> 
 		</div>
 
 		<aside id="sidebar" class="span3" role="complementary">

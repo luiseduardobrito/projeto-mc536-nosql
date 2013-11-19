@@ -7,19 +7,24 @@
 // In this case it is a simple value service.
 angular.module('myApp.services', [])
 
-.service('userService', function() {
+.service('userService', function($http) {
 
-	var me = false;
+	var _this = this;
+	var _public = _this.exports = {};
 
-	this.sayHello = function() {
-		return "Hi " + me.name + "!";
-	};
+	_this.me = null;
 
-	this.set = function(u) {
-		me = u;
+	_this.init = function() {
+		return _public;
 	}
 
-	this.get = function() {
-		return me;
+	_public.set = function(u) {
+		_this.me = u;
 	}
+
+	_public.get = function() {
+		return _this.me;
+	}
+
+	return _this.init();
 });

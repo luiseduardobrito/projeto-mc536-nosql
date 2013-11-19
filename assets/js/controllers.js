@@ -24,8 +24,39 @@ angular.module('myApp.controllers', [])
 
 			$scope.user = userService.get();
 
+			$scope.friends = [];
+			$scope.artists = [];
+
 			if(!$scope.user)
 				$location.path("")
+
+			$scope.addFriend = function() {
+
+				$http({method: "GET", url: "/user/add_friend?login=" + $scope.newFriend})
+
+					.success(function(data, status, headers, config) {
+						$scope.friends.push($scope.newFriend);
+						$scope.newFriend = "";
+					})
+
+					.error(function(data, status, headers, config) {
+						alert("Erro ao adicionar novo amigo")
+					})
+			}
+
+			$scope.addArtist = function() {
+
+				$http({method: "GET", url: "/user/add_artist?login=" + $scope.newArtist})
+
+					.success(function(data, status, headers, config) {
+						$scope.artists.push($scope.newArtist);
+						$scope.newArtist = "";
+					})
+
+					.error(function(data, status, headers, config) {
+						alert("Erro ao curtir artista")
+					})
+			}
 		}
 	])
 
@@ -34,7 +65,8 @@ angular.module('myApp.controllers', [])
 		$scope.artist = {
 			name: null,
 			bio: null,
-			img: null
+			img: null,
+			tags: []
 		}
 
 		$http({method: 'GET', url: '/artist?name=' + $routeParams.name}).
@@ -44,7 +76,8 @@ angular.module('myApp.controllers', [])
 				$scope.artist = {
 					name: data.name,
 					bio: data.bio,
-					img: data.img
+					img: data.img,
+					tags: data.tags
 				};
 			}).
 
